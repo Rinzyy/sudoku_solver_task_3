@@ -30,36 +30,46 @@ Implemented now:
   - board-level validity check (`is_board_valid`)
 - `src/solver.py`
   - recursive backtracking search
-  - next-variable selection using smallest current domain (MRV-style)
+  - switchable variable selection: Naive (first empty) or MRV (smallest domain)
   - metrics tracking: `nodes_expanded`, `backtracks`, `elapsed_seconds`
 - `src/main.py`
   - CLI entrypoint for solving puzzle files
   - optional JSON metrics output
 - `data/`
-  - `test_easy.txt`, `test_hard.txt`
+  - 9 puzzles across 4 difficulty tiers (easy, medium, hard, evil)
+  - named with numeric prefix so they sort easiest-to-hardest
+- `analysis/benchmark.py`
+  - runs all puzzles with both Naive and MRV strategies
+  - per-puzzle timeout (default 5s), prints comparison table, saves JSON
 - `analysis/visualizer.py`
   - plots metrics JSON files for report charts
 
 Verified run:
-- `python3 -m src.main data/test_easy.txt`
-- Result: solved successfully.
+- `python3 -m src.main data/1_easy_01.txt`
+- `python3 -m analysis.benchmark`
+- Result: all puzzles solved with MRV; Naive times out on hard/evil.
 
 ## 3) What is NOT done yet (Open Work)
 
-Recommended next steps:
-- Run/record metrics on multiple puzzles (easy + hard + additional puzzles).
-- Add comparison modes (example: plain backtracking vs MRV + additional pruning).
-- Build a small experiment pipeline to produce clean tables/charts for the report.
+Done:
+- ~~Run/record metrics on multiple puzzles (easy + hard + additional puzzles).~~
+- ~~Add comparison modes (plain backtracking vs MRV).~~
+
+Remaining:
+- Update visualizer to read benchmark_results.json for Naive vs MRV comparison charts.
 - Write final report sections (method, experiments, results, discussion).
+- Prepare 9-minute presentation slides.
 
 ## 4) CLI Commands
 
 From `sudoku_solver/`:
 
-- Solve easy:
-  - `python3 -m src.main data/test_easy.txt`
-- Solve hard + save metrics:
-  - `python3 -m src.main data/test_hard.txt --metrics-out analysis/hard_metrics.json`
+- Solve a puzzle:
+  - `python3 -m src.main data/1_easy_01.txt`
+- Solve + save metrics:
+  - `python3 -m src.main data/3_hard_01.txt --metrics-out analysis/hard_metrics.json`
+- Run full benchmark (Naive vs MRV):
+  - `python3 -m analysis.benchmark --out analysis/benchmark_results.json`
 - Plot comparison:
   - `python3 analysis/visualizer.py analysis/easy_metrics.json analysis/hard_metrics.json --out analysis/metrics_plot.png`
 

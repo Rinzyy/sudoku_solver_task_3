@@ -1,0 +1,164 @@
+[
+  {
+    "puzzle": "1_easy_01",
+    "strategy": "Naive",
+    "solved": true,
+    "timed_out": false,
+    "nodes_expanded": 201,
+    "backtracks": 151,
+    "elapsed_seconds": 0.0015896999975666404
+  },
+  {
+    "puzzle": "1_easy_01",
+    "strategy": "MRV",
+    "solved": true,
+    "timed_out": false,
+    "nodes_expanded": 50,
+    "backtracks": 0,
+    "elapsed_seconds": 0.0015849999617785215
+  },
+  {
+    "puzzle": "1_easy_02",
+    "strategy": "Naive",
+    "solved": true,
+    "timed_out": false,
+    "nodes_expanded": 8970,
+    "backtracks": 8911,
+    "elapsed_seconds": 0.0669317000429146
+  },
+  {
+    "puzzle": "1_easy_02",
+    "strategy": "MRV",
+    "solved": true,
+    "timed_out": false,
+    "nodes_expanded": 220,
+    "backtracks": 161,
+    "elapsed_seconds": 0.007072199950926006
+  },
+  {
+    "puzzle": "1_easy_03",
+    "strategy": "Naive",
+    "solved": true,
+    "timed_out": false,
+    "nodes_expanded": 4209,
+    "backtracks": 4157,
+    "elapsed_seconds": 0.029971899988595396
+  },
+  {
+    "puzzle": "1_easy_03",
+    "strategy": "MRV",
+    "solved": true,
+    "timed_out": false,
+    "nodes_expanded": 52,
+    "backtracks": 0,
+    "elapsed_seconds": 0.0015702000237070024
+  },
+  {
+    "puzzle": "2_medium_01",
+    "strategy": "Naive",
+    "solved": true,
+    "timed_out": false,
+    "nodes_expanded": 55,
+    "backtracks": 9,
+    "elapsed_seconds": 0.00043979997280985117
+  },
+  {
+    "puzzle": "2_medium_01",
+    "strategy": "MRV",
+    "solved": true,
+    "timed_out": false,
+    "nodes_expanded": 46,
+    "backtracks": 0,
+    "elapsed_seconds": 0.0005687999655492604
+  },
+  {
+    "puzzle": "2_medium_02",
+    "strategy": "Naive",
+    "solved": true,
+    "timed_out": false,
+    "nodes_expanded": 78431,
+    "backtracks": 78368,
+    "elapsed_seconds": 0.5720086999936029
+  },
+  {
+    "puzzle": "2_medium_02",
+    "strategy": "MRV",
+    "solved": true,
+    "timed_out": false,
+    "nodes_expanded": 6109,
+    "backtracks": 6046,
+    "elapsed_seconds": 0.20864450000226498
+  },
+  {
+    "puzzle": "3_hard_01",
+    "strategy": "Naive",
+    "solved": false,
+    "timed_out": true,
+    "nodes_expanded": 671120,
+    "backtracks": 671096,
+    "elapsed_seconds": 5.000082199985627
+  },
+  {
+    "puzzle": "3_hard_01",
+    "strategy": "MRV",
+    "solved": true,
+    "timed_out": false,
+    "nodes_expanded": 719,
+    "backtracks": 654,
+    "elapsed_seconds": 0.03393070003949106
+  },
+  {
+    "puzzle": "3_hard_02",
+    "strategy": "Naive",
+    "solved": false,
+    "timed_out": true,
+    "nodes_expanded": 655914,
+    "backtracks": 655878,
+    "elapsed_seconds": 5.000139100011438
+  },
+  {
+    "puzzle": "3_hard_02",
+    "strategy": "MRV",
+    "solved": true,
+    "timed_out": false,
+    "nodes_expanded": 58234,
+    "backtracks": 58169,
+    "elapsed_seconds": 2.6455102000036277
+  },
+  {
+    "puzzle": "3_hard_03",
+    "strategy": "Naive",
+    "solved": true,
+    "timed_out": false,
+    "nodes_expanded": 49559,
+    "backtracks": 49498,
+    "elapsed_seconds": 0.38616520003415644
+  },
+  {
+    "puzzle": "3_hard_03",
+    "strategy": "MRV",
+    "solved": true,
+    "timed_out": false,
+    "nodes_expanded": 13811,
+    "backtracks": 13750,
+    "elapsed_seconds": 0.5892995000467636
+  },
+  {
+    "puzzle": "4_evil_01",
+    "strategy": "Naive",
+    "solved": false,
+    "timed_out": true,
+    "nodes_expanded": 632061,
+    "backtracks": 632022,
+    "elapsed_seconds": 5.000130000000354
+  },
+  {
+    "puzzle": "4_evil_01",
+    "strategy": "MRV",
+    "solved": true,
+    "timed_out": false,
+    "nodes_expanded": 14627,
+    "backtracks": 14562,
+    "elapsed_seconds": 0.7461844999925233
+  }
+]

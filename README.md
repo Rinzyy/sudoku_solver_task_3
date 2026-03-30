@@ -13,9 +13,12 @@ sudoku_solver/
 │   ├── solver.py
 │   └── main.py
 ├── data/
-│   ├── test_easy.txt
-│   └── test_hard.txt
+│   ├── 1_easy_01.txt ... 1_easy_03.txt
+│   ├── 2_medium_01.txt ... 2_medium_02.txt
+│   ├── 3_hard_01.txt ... 3_hard_03.txt
+│   └── 4_evil_01.txt
 ├── analysis/
+│   ├── benchmark.py
 │   └── visualizer.py
 ├── requirements.txt
 └── README.md
@@ -32,8 +35,14 @@ pip install -r requirements.txt
 ## Run Solver
 
 ```bash
-python -m src.main data/test_easy.txt --metrics-out analysis/easy_metrics.json
-python -m src.main data/test_hard.txt --metrics-out analysis/hard_metrics.json
+python -m src.main data/1_easy_01.txt
+python -m src.main data/3_hard_01.txt --metrics-out analysis/hard_metrics.json
+```
+
+## Run Benchmark (Naive vs MRV across all puzzles)
+
+```bash
+python -m analysis.benchmark --out analysis/benchmark_results.json
 ```
 
 ## Generate Metrics Plot
@@ -46,4 +55,6 @@ python analysis/visualizer.py analysis/easy_metrics.json analysis/hard_metrics.j
 
 - Use `0` or `.` for empty cells in puzzle files.
 - Solver tracks `nodes_expanded`, `backtracks`, and `elapsed_seconds`.
+- Solver supports Naive (first-empty) and MRV (minimum remaining values) variable selection via `use_mrv` flag.
+- Benchmark compares both strategies with a configurable timeout (`--timeout`, default 5s).
 - Validation logic is isolated in `src/constraints.py` so teammates can iterate independently.

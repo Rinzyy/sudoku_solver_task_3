@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Optional
 from time import perf_counter
 
 from src.board import Board
@@ -12,23 +13,33 @@ class SolverMetrics:
     nodes_expanded: int = 0
     backtracks: int = 0
     elapsed_seconds: float = 0.0
+    timed_out: bool = False
 
 
 class BacktrackingSolver:
-    def __init__(self) -> None:
+    def __init__(self, use_mrv: bool = True, timeout: Optional[float] = None) -> None:
         self.metrics = SolverMetrics()
+        self.use_mrv = use_mrv
+        self._deadline: Optional[float] = None
+        self.timeout = timeout
 
     def solve(self, board: Board) -> bool:
         if not is_board_valid(board):
             return False
 
         start = perf_counter()
+        if self.timeout is not None:
+            self._deadline = start + self.timeout
         solved = self._search(board)
         self.metrics.elapsed_seconds = perf_counter() - start
         return solved
 
     def _search(self, board: Board) -> bool:
         self.metrics.nodes_expanded += 1
+
+        if self._deadline is not None and perf_counter() > self._deadline:
+            self.metrics.timed_out = True
+            return False
 
         next_cell = self._select_unassigned_variable(board)
         if next_cell is None:
@@ -47,8 +58,10 @@ class BacktrackingSolver:
         self.metrics.backtracks += 1
         return False
 
-    @staticmethod
-    def _select_unassigned_variable(board: Board) -> tuple[int, int] | None:
+    def _select_unassigned_variable(self, board: Board) -> tuple[int, int] | None:
+        if not self.use_mrv:
+            return board.find_empty()
+
         best_cell = None
         best_domain_size = 10
 
