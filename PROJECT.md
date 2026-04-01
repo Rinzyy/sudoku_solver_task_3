@@ -54,9 +54,9 @@ Verified run:
 Done:
 - ~~Run/record metrics on multiple puzzles (easy + hard + additional puzzles).~~
 - ~~Add comparison modes (plain backtracking vs MRV).~~
+- ~~Update visualizer to read benchmark_results.json for Naive vs MRV comparison charts.~~
 
 Remaining:
-- Update visualizer to read benchmark_results.json for Naive vs MRV comparison charts.
 - Write final report sections (method, experiments, results, discussion).
 - Prepare 9-minute presentation slides.
 

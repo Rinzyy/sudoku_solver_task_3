@@ -48,7 +48,7 @@ python -m analysis.benchmark --out analysis/benchmark_results.json
 ## Generate Metrics Plot
 
 ```bash
-python analysis/visualizer.py analysis/easy_metrics.json analysis/hard_metrics.json --out analysis/metrics_plot.png
+python analysis/visualizer.py analysis/benchmark_results.json
 ```
 
 ## Notes
