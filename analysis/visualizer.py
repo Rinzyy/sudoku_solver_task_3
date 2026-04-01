@@ -43,10 +43,6 @@ def load_and_group(path: Path):
 
 
 def split_by_difficulty(grouped):
-    """
-    Splits puzzles into difficulty groups based on first number:
-    1 = easy, 2 = medium, 3 = hard, 4 = evil
-    """
     difficulty_map = {
         "1": "easy",
         "2": "medium",
@@ -123,6 +119,8 @@ def plot_comparison(
     axes[0].bar([i - width/2 for i in x], naive_nodes, width, label="Naive")
     axes[0].bar([i + width/2 for i in x], mrv_nodes, width, label="MRV")
     axes[0].set_title(f"Nodes Expanded ({title_suffix})")
+    axes[0].set_xlabel("Puzzle")
+    axes[0].set_ylabel("Nodes")
     axes[0].set_xticks(x)
     axes[0].set_xticklabels(labels, rotation=30)
     axes[0].legend()
@@ -131,6 +129,8 @@ def plot_comparison(
     axes[1].bar([i - width/2 for i in x], naive_backtracks, width, label="Naive")
     axes[1].bar([i + width/2 for i in x], mrv_backtracks, width, label="MRV")
     axes[1].set_title(f"Backtracks ({title_suffix})")
+    axes[1].set_xlabel("Puzzle")
+    axes[1].set_ylabel("Backtracks")
     axes[1].set_xticks(x)
     axes[1].set_xticklabels(labels, rotation=30)
     axes[1].legend()
@@ -139,6 +139,8 @@ def plot_comparison(
     axes[2].bar([i - width/2 for i in x], naive_times, width, label="Naive")
     axes[2].bar([i + width/2 for i in x], mrv_times, width, label="MRV")
     axes[2].set_title(f"Elapsed Time ({title_suffix})")
+    axes[2].set_xlabel("Puzzle")
+    axes[2].set_ylabel("Seconds")
     axes[2].set_xticks(x)
     axes[2].set_xticklabels(labels, rotation=30)
     axes[2].legend()
