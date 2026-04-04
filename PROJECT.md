@@ -49,18 +49,8 @@ Verified run:
 - `python3 -m analysis.benchmark`
 - Result: all puzzles solved with MRV; Naive times out on hard/evil.
 
-## 3) What is NOT done yet (Open Work)
 
-Done:
-- ~~Run/record metrics on multiple puzzles (easy + hard + additional puzzles).~~
-- ~~Add comparison modes (plain backtracking vs MRV).~~
-- ~~Update visualizer to read benchmark_results.json for Naive vs MRV comparison charts.~~
-
-Remaining:
-- Write final report sections (method, experiments, results, discussion).
-- Prepare 9-minute presentation slides.
-
-## 4) CLI Commands
+## 3) CLI Commands
 
 From `sudoku_solver/`:
 
@@ -73,7 +63,7 @@ From `sudoku_solver/`:
 - Plot comparison:
   - `python3 analysis/visualizer.py analysis/easy_metrics.json analysis/hard_metrics.json --out analysis/metrics_plot.png`
 
-## 5) Definition of Done
+## 4) Definition of Done
 
 Minimum acceptable final submission:
 - Correct solver for provided Sudoku puzzles.
